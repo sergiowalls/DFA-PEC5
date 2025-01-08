@@ -11,3 +11,12 @@
 .show-detail-button {
   max-width: 300px;
 }
+
+.show-detail-all {
+  margin-top: 16px;
+}
+
+.show-detail-image {
+  float: right;
+  margin-left: 16px;
+}
