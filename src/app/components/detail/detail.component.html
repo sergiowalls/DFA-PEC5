@@ -11,7 +11,7 @@
   <div *ngIf="detailsVisible">
     <div [innerHTML]="show.summary"></div>
 
-    <img mat-card-image src="{{show.image.medium}}" alt="Poster of {{show.name}}">
+    <img mat-card-image ngSrc="{{show.image.medium}}" alt="Poster of {{show.name}}" width="210" height="295">
 
     <mat-accordion>
       <mat-expansion-panel>

@@ -1,13 +1,16 @@
 .show-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 8px;
+  justify-content: space-around;
+  flex-flow: wrap;
 }
 
 .show-card {
-  max-width: 24%;
-  margin-bottom: 8px;
+  width: 32%;
+  margin-bottom: 16px;
+}
+
+.show-card-image {
+  align-self: center;
 }
 
 .show-card-content {
@@ -17,4 +20,16 @@
 
 .show-card-button {
   margin-top: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .show-card {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .show-card {
+    width: 96%;
+  }
 }
