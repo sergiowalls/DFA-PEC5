@@ -1,0 +1,52 @@
+<div *ngIf="show" class="show-detail">
+  <div class="show-detail-header">
+    <h2>{{ show.name }}</h2>
+    <button mat-icon-button color="primary" aria-label="Back to shows list" (click)="navigateToShowList()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="showDetails()" class="show-detail-button">Show all details</button>
+
+  <div *ngIf="detailsVisible">
+    <div [innerHTML]="show.summary"></div>
+
+    <img mat-card-image src="{{show.image.medium}}" alt="Poster of {{show.name}}">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Metadata
+          </mat-panel-title>
+          <mat-panel-description>
+            Click to see more information of the show
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Id: {{ show.id }}</mat-list-item>
+          <mat-list-item role="listitem">Language: {{ show.language }}</mat-list-item>
+          <mat-list-item role="listitem">Runtime: {{ show.runtime }}</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Genres
+          </mat-panel-title>
+          <mat-panel-description>
+            Click to see the genres of the show
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item *ngFor="let genre of show.genres" role="listitem">{{ genre }}</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <span>Average rating:</span>
+    <mat-slider [disabled]="true" [max]="10" [min]="0">
+      <input matSliderThumb [(value)]="show.rating.average" #slider>
+    </mat-slider>
+  </div>
+</div>

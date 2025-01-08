@@ -1,0 +1,14 @@
+<h2>Show list</h2>
+<div class="show-list">
+  <mat-card *ngFor="let show of shows" class="show-card">
+    <mat-card-header>
+      <mat-card-title>{{ show.name }}</mat-card-title>
+      <mat-card-subtitle>#{{ show.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{show.image.medium}}" alt="Poster of {{show.name}}">
+    <mat-card-content [innerHTML]="show.summary" class="show-card-content"></mat-card-content>
+    <mat-card-actions class="show-card-button">
+      <button mat-raised-button color="accent" (click)="navigateToShow(show.id)">More info</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

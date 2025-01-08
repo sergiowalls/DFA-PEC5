@@ -1,0 +1,13 @@
+.show-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-detail-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-detail-button {
+  max-width: 300px;
+}
