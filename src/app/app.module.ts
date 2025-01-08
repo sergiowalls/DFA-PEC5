@@ -14,6 +14,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatSliderModule } from "@angular/material/slider";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgOptimizedImage } from "@angular/common";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [AppComponent, DetailComponent, ListComponent],
@@ -28,6 +29,7 @@ import { NgOptimizedImage } from "@angular/common";
     MatExpansionModule,
     MatListModule,
     MatSliderModule,
+    MatProgressSpinnerModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

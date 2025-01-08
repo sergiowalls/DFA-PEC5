@@ -1,6 +1,11 @@
 <h2>Show list</h2>
-<div class="show-list">
-  <mat-card *ngFor="let show of shows" class="show-card">
+
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!loading" class="show-list">
+  <mat-card *ngFor="let show of shows" class="show-card" [@fadeInOut]>
     <mat-card-header>
       <mat-card-title>{{ show.name }}</mat-card-title>
       <mat-card-subtitle>#{{ show.id }}</mat-card-subtitle>
